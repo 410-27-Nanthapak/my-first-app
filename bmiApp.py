@@ -6,7 +6,7 @@ st.write("กรอกข้อมูลน้ำหนักและส่ว�
 
 #ส่วนที่ 2 สร้างช่องรับค่าน้ำหนัก และ สวนสูง
 Weight = st.number_input ("กรอกน้ำหนักของคุณ (กิโลกรัม) : ", min_value=1,0, value=1.6)
-height_cm = st.number_input ("กรอกส่วนสูงของคุณ (เซนติเมตร) :", min_value=1.0, value=1.e)
+height_cm = st.number_input ("กรอกส่วนสูงของคุณ (เซนติเมตร):", min_value=1.0, value=1.e)
 
 #ส่วนที่ 3 สร้างปุ่มกดดำนวณ
 if st.button("คำนวณค่า BMI"):
