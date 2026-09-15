@@ -3,9 +3,7 @@ import streamlit as st
 
 st.title("⏱️ เกมทายศิลปิน SM Entertainment")
 
-# ----------------------------------------------------
 # 1. กำหนดค่าเริ่มต้นใน session_state
-# ----------------------------------------------------
 for i in range(1, 11):
     if f"ans{i}_val" not in st.session_state:
         st.session_state[f"ans{i}_val"] = ""
@@ -17,9 +15,9 @@ if "is_ended" not in st.session_state:
     st.session_state.is_ended = False
 
 
-# ----------------------------------------------------
+
 # ฟังก์ชันเริ่มเกมใหม่
-# ----------------------------------------------------
+
 def reset_game():
     for i in range(1, 11):
         st.session_state[f"ans{i}_val"] = ""
@@ -28,9 +26,9 @@ def reset_game():
     st.session_state.is_ended = False
 
 
-# ----------------------------------------------------
+
 # ฟังก์ชันแสดงผลคะแนน
-# ----------------------------------------------------
+
 @st.dialog("📊 สรุปผลการเล่นเกม")
 def show_result_dialog(answers):
     st.balloons()
@@ -73,15 +71,14 @@ def show_result_dialog(answers):
         st.error("💀 You lose!")
 
 
-# ----------------------------------------------------
+
 # 2. ปุ่มเริ่มเล่นเกม
-# ----------------------------------------------------
 st.button("🎮 เริ่มเล่นเกม", on_click=reset_game)
 
 
-# ----------------------------------------------------
+
 # 3. แสดงเวลานับถอยหลัง
-# ----------------------------------------------------
+
 if st.session_state.start is not None and not st.session_state.is_ended:
 
     time_left = int(
@@ -98,9 +95,8 @@ if st.session_state.start is not None and not st.session_state.is_ended:
 st.divider()
 
 
-# ----------------------------------------------------
+
 # 4. คำถามและช่องรับคำตอบ
-# ----------------------------------------------------
 
 questions = [
     "ข้อ 1: สมาชิกวงผู้หญิง มี 4 คน มาจากค่าย SM",
@@ -146,10 +142,7 @@ for i in range(10):
     st.session_state[f"ans{i+1}_val"] = answer
     answers.append(answer)
 
-
-# ----------------------------------------------------
 # 5. ปุ่มส่งคำตอบ
-# ----------------------------------------------------
 if st.session_state.start is not None and not st.session_state.is_ended:
 
     if st.button("📥 ส่งคำตอบ"):
@@ -159,10 +152,8 @@ if st.session_state.start is not None and not st.session_state.is_ended:
     # ทำให้เวลานับต่อเนื่อง
     time.sleep(1)
     st.rerun()
-
-
-# ----------------------------------------------------
+    
 # 6. แสดงผลลัพธ์
-# ----------------------------------------------------
+
 if st.session_state.is_ended:
     show_result_dialog(answers)
