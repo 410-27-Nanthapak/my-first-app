@@ -45,8 +45,7 @@ def show_result_dialog(answers):
         "dearalice",
         "naevis",
         "exo",
-        "h.o.t."
-    ]
+        "H.O.T.",    ]
 
     score = 0
 
