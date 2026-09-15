@@ -43,7 +43,7 @@ def show_result_dialog(answers):
         "nct wish",
         "nct",
         "dearalice",
-        "nævis",
+        "naevis",
         "exo",
         "h.o.t."
     ]
